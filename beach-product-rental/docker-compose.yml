@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'beach_product'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - 3306
+  app:
+    image: beach-app
+    environment:
+      MYSQL_HOST: db
+    ports:
+      - '8080:8080'
