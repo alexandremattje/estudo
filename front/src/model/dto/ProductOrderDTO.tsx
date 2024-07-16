@@ -1,4 +1,5 @@
 export interface ProductOrderDTO {
+	id?: number,
 	userName: string,
 	productType: string,
 	timeHour: number
